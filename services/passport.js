@@ -28,7 +28,8 @@ passport.use(
         {
             clientID: keys.googleClientID,
             clientSecret: keys.googleClientSecret,
-            callbackURL: '/auth/google/callback'    //once user authenticates with google this is path to redirect back to our app.
+            callbackURL: '/auth/google/callback',    //once user authenticates with google this is path to redirect back to our app.
+            proxy: true
         }, 
         (accessToken, refreshToken, profile, done) => {
             //mongoose query MongoDb database so we don't save user with same googleId after every authentication request
