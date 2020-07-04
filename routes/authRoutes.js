@@ -10,17 +10,24 @@ module.exports = (app) => {
         })
     );
     
-    app.get('/auth/google/callback', passport.authenticate('google'));
+    app.get(
+        '/auth/google/callback', 
+        passport.authenticate('google'),
+        (req, res) => {
+            //redirect whoever is making request to another route in application:
+            res.redirect('/surveys');
+        } 
+    );
 
     app.get('/api/logout', (req, res) => {
         //logout attached to req by passport
         req.logout();
-        //proove to user that they are logged out
-        res.send(req.user);
+        //redirect user to route route of our app:
+        res.redirect('/');
     });
 
     app.get('/api/current_user', (req, res) => {
-        //test to make sure user has cookie token converted to user.
+        //test to make sure user has cookie token converted to user model.
         res.send(req.user);
     });
 };

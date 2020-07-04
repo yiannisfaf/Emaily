@@ -31,22 +31,22 @@ passport.use(
             callbackURL: '/auth/google/callback',    //once user authenticates with google this is path to redirect back to our app.
             proxy: true
         }, 
-        (accessToken, refreshToken, profile, done) => {
+        async (accessToken, refreshToken, profile, done) => {
             //mongoose query MongoDb database so we don't save user with same googleId after every authentication request
             //but this is an async action so returns a promise, 
-            User.findOne({ googleId: profile.id })
-                .then((existingUser) => {
-                    if (existingUser) {
-                        //we already have a record with the given profile ID
-                        done(null, existingUser);
-                    } else {
-                        //Don't have an existing record:
-                        //Model Instance part of Model Class User, .save takes info and saves to MongoDB Databse.
-                        //Again an async operation so needs .then to confirm when completed we can finish up and call done().
-                        new User({ googleId: profile.id }).save()
-                            .then(user => done(null, user));
-                    }
-                });
+            const existingUser = await User.findOne({ googleId: profile.id })
+            
+            if (existingUser) {
+                //we already have a record with the given profile ID
+                done(null, existingUser);
+            } else {
+                //Don't have an existing record:
+                //Model Instance part of Model Class User, .save takes info and saves to MongoDB Databse.
+                //Again an async operation so needs .then to confirm when completed we can finish up and call done().
+                const user = await new User({ googleId: profile.id }).save()
+                done(null, user);
+            }
         }
     )
 );
+
