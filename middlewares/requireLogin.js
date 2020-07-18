@@ -3,7 +3,7 @@
 module.exports = (req, res, next) => {
     //if passport does not find a user that was referenced inside the cookie of the request
     if(!req.user) {
-        //401 = Forbidden
+        //401 = Unauthorized
         return res.status(401).send({ error: 'You must log in!' });
     }
 
