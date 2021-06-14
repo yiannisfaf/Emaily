@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Header from './Header';
 import Hero from './Hero';
 import SignIn from './SignIn';
 import CreateSurvey from './CreateSurvey';
@@ -11,7 +10,6 @@ import Footer from './Footer';
 const Home = () => {
     return (
         <div>
-            <Header />
             <Hero />
             <SignIn />
             <CreateSurvey />

@@ -4,11 +4,11 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
+import Header from './Header';
 import Home from './Home';
 import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 import Email from './Email';
-
 
 //called a functional component as it has an arrow function:
 class App extends Component {
@@ -29,13 +29,14 @@ class App extends Component {
         }
 
         return (
-            <BrowserRouter>
-                <div className="container">
-                    <Route exact path="/" component={Home} />
+            <div className="container">
+                <BrowserRouter>
+                    <Header />
+                    <Route path="/" component={Home} />
                     <Route exact path="/surveys" component={Dashboard} />
                     <Route path="/surveys/new" component={SurveyNew} />
-                </div>
-            </BrowserRouter>
+                </BrowserRouter>
+            </div>
         );
     }
 };
