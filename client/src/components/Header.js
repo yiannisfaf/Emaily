@@ -10,8 +10,8 @@ class Header extends Component {
             case null:
                 return;
             case false:
-                return <li className="landing__header__list">
-                            <a className="landing__header__signin" href="/auth/google">
+                return <li className="header__list">
+                            <a className="header__signin" href="/auth/google">
                                 Sign in with <FaGoogle />
                             </a>
                         </li>;
