@@ -43,18 +43,7 @@ class Header extends Component {
                     >
                         Emaily
                     </Link>
-                    {/* {this.renderContent()} */}
-                    <div className="header__payments__container">
-                        <li key="1">
-                            <Payments />
-                        </li>
-                        <li key="3" className="header__payments__credits">
-                            Credits: {4}
-                        </li>
-                        <li key="2">
-                            <a href="/api/logout" className="header__payments__logout">Logout</a>
-                        </li>
-                    </div>
+                    {this.renderContent()}
                 </div>
             </section>
         );
