@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Payments from './Payments';
-
+import { FaGoogle } from 'react-icons/fa';
 
 class Header extends Component {
     renderContent() {
@@ -10,14 +10,24 @@ class Header extends Component {
             case null:
                 return;
             case false:
-                return <li><a href="/auth/google">Login With Google</a></li>;
+                return <li className="landing__header__list">
+                            <a className="landing__header__signin" href="/auth/google">
+                                Sign in with <FaGoogle />
+                            </a>
+                        </li>;
             default:
                 return [
-                    <li key="1"><Payments /></li>,
-                    <li key="3" style={{ margin: '0 10px' }}>
-                        Credits: {this.props.auth.credits}
-                    </li>,
-                    <li key="2"><a href="/api/logout">Logout</a></li>
+                    <div className="payments__container">
+                        <li key="1">
+                            <Payments />
+                        </li>
+                        <li key="3" className="payments__credits">
+                            Credits: {4}
+                        </li>
+                        <li key="2">
+                            <a href="/api/logout" className="payments__logout">Logout</a>
+                        </li>
+                    </div>
                 ];
         }
     }
@@ -25,19 +35,17 @@ class Header extends Component {
 
     render() {
         return (
-            <nav>
-                <div className="nav-wrapper">
+            <section className="header">
+                <div className="landing__header">
                     <Link 
                         to={this.props.auth ? '/surveys' : '/'} 
-                        className="left brand-logo"
+                        className="landing__header__logo"
                     >
                         Emaily
                     </Link>
-                    <ul className="right">
-                        {this.renderContent()}
-                    </ul>
+                    {this.renderContent()}
                 </div>
-            </nav>
+            </section>
         );
     }
 }

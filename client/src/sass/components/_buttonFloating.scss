@@ -1,0 +1,38 @@
+.btn-floating {
+  &__button {
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    text-decoration: none;
+    background-color: $color-primary;
+    color: $color-white;
+    text-align: center;
+    padding: 2rem;
+    z-index: 2000;
+    transition: all 0.3s;
+
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
+
+    &:hover {
+      transform: translateY(-1rem);
+    }
+  }
+
+  &__icon {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(4);
+  }
+}

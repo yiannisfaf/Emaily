@@ -1,0 +1,36 @@
+.survey-card {
+  height: 17vh;
+  background-color: rgba($color-grey-light-2, 0.9);
+  font-size: 1.4rem;
+  padding: 2.5rem;
+  text-align: left;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+  &__title {
+    color: $color-black;
+    font-size: 1.8rem;
+    border-bottom: solid 2px $color-grey-dark;
+  }
+
+  &__results {
+    float: right;
+  }
+}
+
+.yes {
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: green;
+  color: $color-white;
+  padding: 0.6rem 2rem;
+  margin-right: 2rem;
+}
+
+.no {
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: red;
+  color: $color-white;
+  padding: 0.6rem 2rem;
+}

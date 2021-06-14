@@ -3,12 +3,11 @@ import React from 'react';
 //input = props.input object
 export default ({ input, label, meta: { error, touched } }) => {
     return (
-        <div>
-            <label>{label}</label>
-            <input {...input} style={{ marginBottom: '5px' }}/>
-            <div className="red-text" style={{ marginBottom: '20px' }}>
+        <div className="form__group">
+            <input {...input} className="form__input" placeholder={label} id={label} />
+            <label className="form__label" for={label}>
                 {touched && error}
-            </div>
+            </label>
         </div>
     )
 };

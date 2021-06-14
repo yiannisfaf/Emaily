@@ -1,0 +1,51 @@
+.signin {
+  display: flex;
+
+  &__content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__header {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 200;
+    color: $color-primary;
+
+    @include respond(tab-land) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__image {
+    width: 50rem;
+    height: 30rem;
+
+    @include respond(tab-land) {
+      width: 40rem;
+      height: 20rem;
+    }
+  }
+
+  &__details {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+
+    @include respond(tab-land) {
+      display: flex;
+      word-wrap: break-word;
+      font-size: 2rem;
+      font-weight: 400;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.header {
+  display: flex;
+  background-color: $color-grey-light-1;
+  height: 4rem;
+}
+
+.section-landing {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-grey-light-1;
+  height: 70vh;
+
+  @include respond(tab-port) {
+    padding: 0 0;
+  }
+}
+
+.section-howto {
+  padding: 20rem 0;
+  background-color: $color-grey-dark;
+  background-size: cover;
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+
+  @include respond(phone) {
+    margin-top: 20rem;
+  }
+}
+
+.section-surveys {
+  padding: 3rem;
+}
+
+.section-signin {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-grey-dark-3;
+  height: 60vh;
+  justify-content: center;
+
+  @include respond(tab-port) {
+  }
+}
+
+.section-create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-grey-light-1;
+  height: 60vh;
+  justify-content: center;
+
+  @include respond(tab-port) {
+  }
+}
+
+.section-tokens {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-grey-dark-3;
+  height: 60vh;
+  justify-content: center;
+
+  @include respond(tab-port) {
+  }
+}
+
+.section-send {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-grey-light-1;
+  height: 60vh;
+  justify-content: center;
+
+  @include respond(tab-port) {
+  }
+}
