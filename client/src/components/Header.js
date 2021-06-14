@@ -17,15 +17,15 @@ class Header extends Component {
                         </li>;
             default:
                 return [
-                    <div className="payments__container">
+                    <div className="header__payments__container">
                         <li key="1">
                             <Payments />
                         </li>
-                        <li key="3" className="payments__credits">
+                        <li key="3" className="header__payments__credits">
                             Credits: {4}
                         </li>
                         <li key="2">
-                            <a href="/api/logout" className="payments__logout">Logout</a>
+                            <a href="/api/logout" className="header__payments__logout">Logout</a>
                         </li>
                     </div>
                 ];
@@ -35,15 +35,26 @@ class Header extends Component {
 
     render() {
         return (
-            <section className="header">
-                <div className="landing__header">
+            <section className="section-header">
+                <div className="header">
                     <Link 
                         to={this.props.auth ? '/surveys' : '/'} 
-                        className="landing__header__logo"
+                        className="header__logo"
                     >
                         Emaily
                     </Link>
-                    {this.renderContent()}
+                    {/* {this.renderContent()} */}
+                    <div className="header__payments__container">
+                        <li key="1">
+                            <Payments />
+                        </li>
+                        <li key="3" className="header__payments__credits">
+                            Credits: {4}
+                        </li>
+                        <li key="2">
+                            <a href="/api/logout" className="header__payments__logout">Logout</a>
+                        </li>
+                    </div>
                 </div>
             </section>
         );

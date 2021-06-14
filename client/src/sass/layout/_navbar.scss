@@ -1,19 +1,17 @@
-.header {
+.section-header {
   display: flex;
-  height: 20rem;
+  height: 8rem;
   width: 100%;
-  justify-content: space-between;
+  background-color: $color-grey-light-1;
+  align-items: center;
 }
 
-.landing__header {
-  @include respond(tab-land) {
-  }
-
-  @include respond(tab-port) {
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
 
   &__logo {
-    margin-top: 2rem;
     margin-left: 2rem;
     text-decoration: none;
     color: $color-primary;
@@ -29,7 +27,6 @@
   }
 
   &__signin {
-    margin-top: 2rem;
     margin-right: 2rem;
     font-size: 1.2rem;
     text-decoration: none;
@@ -46,6 +43,73 @@
 
     &:hover {
       transform: translateY(-0.2rem);
+    }
+  }
+
+  &__payments {
+    list-style: none;
+
+    &__container {
+      display: flex;
+      list-style: none;
+      text-decoration: none;
+      align-items: center;
+      justify-content: space-around;
+      width: 40rem;
+    }
+
+    &__add {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-primary;
+      color: #fff;
+      padding: 2rem;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 90px;
+      border: none;
+      cursor: pointer;
+      font-size: 3rem;
+      transition: all 0.4s;
+
+      &__text {
+        display: none;
+        transition: all 0.4s;
+      }
+
+      &:hover {
+        width: 15rem;
+        justify-content: right;
+      }
+
+      &:hover &__text {
+        display: block;
+        font-size: 1.75rem;
+        margin-left: 1rem;
+      }
+    }
+
+    &__credits {
+      list-style: none;
+      color: $color-grey-dark-3;
+      font-size: 1.75rem;
+    }
+
+    &__logout {
+      font-size: 1.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-grey-dark-3;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      padding: 2rem;
+      width: 10rem;
+      height: 5rem;
+      border-radius: 90px;
+      border: none;
     }
   }
 }
