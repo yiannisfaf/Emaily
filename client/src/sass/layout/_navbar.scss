@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  height: 20rem;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.landing__header {
+  @include respond(tab-land) {
+  }
+
+  @include respond(tab-port) {
+  }
+
+  &__logo {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    text-decoration: none;
+    color: $color-primary;
+    font-weight: 700;
+    font-size: 3rem;
+    z-index: 500;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    text-transform: uppercase;
+  }
+
+  &__signin {
+    margin-top: 2rem;
+    margin-right: 2rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    background-color: $color-grey-dark-3;
+    padding: 2rem 2rem;
+    width: 15rem;
+    height: 5rem;
+    border-radius: 100px;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-0.2rem);
+    }
+  }
+}
