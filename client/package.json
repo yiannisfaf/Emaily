@@ -28,7 +28,7 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set HTTPS=true&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
